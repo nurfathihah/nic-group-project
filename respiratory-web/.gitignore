@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data / scratch (do NOT commit raw audio)
+*.wav
+data/
+uploads/
+
+# NOTE: the artifacts/ folder IS committed (models + json the app needs).
+# If your models are very large, use Git LFS instead of ignoring them.
