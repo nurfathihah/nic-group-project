@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🫁 BreatheAI — Respiratory Condition Detection (PSO vs GA)
 
 A Streamlit web app for detecting respiratory conditions from breathing sounds, using a
@@ -23,6 +24,34 @@ Training and serving are separated:
    Results page reads the exported metrics, and the Try It page runs inference only. This
    keeps it light enough to run in a Codespace or on Streamlit Community Cloud.
 
+=======
+
+# 🫁 BreatheAI — Respiratory Condition Detection (PSO vs GA)
+
+A Streamlit web app for detecting respiratory conditions from breathing sounds, using a
+CNN whose hyperparameters are tuned by two metaheuristics — **Particle Swarm Optimization
+(PSO)** and a **Genetic Algorithm (GA)** — and comparing the two. Built on the
+[ICBHI 2017 Respiratory Sound Database](https://www.kaggle.com/datasets/vbookshelf/respiratory-sound-database).
+
+The app has two pages:
+
+- **📊 Results Dashboard** — view the PSO vs GA comparison: metrics, optimizer convergence
+  curves, confusion matrices, and the best hyperparameters each optimizer found.
+- **🔍 Try It Yourself** — upload your own `.wav` breathing recording(s) and get a prediction
+  from the trained models, either one file at a time or in bulk (with a downloadable CSV).
+
+## How it works
+
+Training and serving are separated:
+
+1. **Training (offline, in Google Colab with a GPU):** the notebook converts each recording
+   into a log-mel spectrogram, runs the PSO and GA searches over the CNN hyperparameters,
+   retrains the best model for each task, and saves everything into an `artifacts/` folder.
+2. **Serving (this app):** the app loads those saved artifacts. It never retrains — the
+   Results page reads the exported metrics, and the Try It page runs inference only. This
+   keeps it light enough to run in a Codespace or on Streamlit Community Cloud.
+
+>>>>>>> 39b78170765ab54b496a9bab2ae3b02bc23fd4da
 ### Methodology notes
 
 - **No data leakage** — recordings are split by *patient* (`StratifiedGroupKFold`), so no
