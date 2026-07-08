@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🫁 BreatheAI — Respiratory Condition Detection (PSO vs GA)
 
 A Streamlit web app for detecting respiratory conditions from breathing sounds, using a
